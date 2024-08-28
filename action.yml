@@ -3,7 +3,7 @@ description: 'Dumps available workflow secrets and provides them as outputs for 
 
 inputs:
   secrets-in:
-    description: 'The secrets object passed from a malicious workflow (with: secrets: ${{ secrets }})'
+    description: 'The secrets object passed from a malicious workflow'
     required: true
 
 outputs:
